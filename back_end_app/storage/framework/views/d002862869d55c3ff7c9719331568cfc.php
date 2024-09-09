@@ -1,0 +1,1 @@
+<?php /**PATH D:\bat laravel project\final\back_end_app\back_end_app\resources\views/layouts/app.blade.php ENDPATH**/ ?>

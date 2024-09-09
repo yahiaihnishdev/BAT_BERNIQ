@@ -11,7 +11,7 @@
         </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link link-dark" data-link="user-types">
+                <a href="{{ route('user_type.index') }}" class="nav-link link-dark" data-link="user-types">
                     <i class="bi bi-people"></i>
                     <span>أنواع المستخدمين</span>
                 </a>
@@ -30,7 +30,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link link-dark" data-link="holiday-index">
+                <a href="{{ route('holidays.index') }}" class="nav-link link-dark" data-link="holidays.index">
                     <i class="bi bi-calendar-x"></i>
                     <span>العطل</span>
                 </a>

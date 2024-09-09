@@ -1,4 +1,4 @@
-@extends('layout.app')
+{{-- @extends('layout.app')
 
 @section('content')
     <form action="{{ route('jobs.search') }}" method="GET">
@@ -26,4 +26,4 @@
         </tbody>
     </table>
     @endif
-@endsection
+@endsection --}}

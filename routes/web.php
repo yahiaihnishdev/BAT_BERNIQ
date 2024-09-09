@@ -44,5 +44,33 @@ Route::delete('/jobs/{id}', [JobController::class, 'delete'])->name('jobs.delete
 Route::get('/jobs/search', [JobController::class, 'search'])->name('jobs.search');
 
 
-Route::resource('jobs', JobController::class);
+// Route::resource('jobs', JobController::class);
 Route::get('jobs/search', [JobController::class, 'search'])->name('jobs.search');
+
+use App\Http\Controllers\UserTypeController;
+use App\Http\Controllers\HolidayController;
+
+
+// User Type routes
+Route::get('/user_type', [UserTypeController::class, 'index'])->name('user_type.index');
+Route::get('/user_type/create', [UserTypeController::class, 'create'])->name('user_type.create');
+Route::post('/user_type', [UserTypeController::class, 'store'])->name('user_type.store');
+Route::get('/user_type/{id}/edit', [UserTypeController::class, 'edit'])->name('user_type.edit');
+Route::put('/user_type/{id}', [UserTypeController::class, 'update'])->name('user_type.update'); // This needs to be PUT
+Route::delete('/user_type/{id}', [UserTypeController::class, 'delete'])->name('user_type.delete');
+Route::get('/user_type/search', [UserTypeController::class, 'search'])->name('user_type.search');
+
+
+
+
+
+// holiday routes
+
+Route::get('/holidays', [HolidayController::class, 'index'])->name('holidays.index');
+Route::get('/holidays/create', [HolidayController::class, 'create'])->name('holidays.create');
+Route::post('/holidays', [HolidayController::class, 'store'])->name('holidays.store');
+Route::get('/holidays/{id}/edit', [HolidayController::class, 'edit'])->name('holidays.edit');
+Route::put('/holidays/{id}', [HolidayController::class, 'update'])->name('holidays.update');
+Route::delete('/holidays/{id}', [HolidayController::class, 'delete'])->name('holidays.delete');
+Route::get('/holidays/search', [HolidayController::class, 'search'])->name('holidays.search');
+Route::get('holidays/export-pdf', [HolidayController::class, 'exportPDF'])->name('holidays.exportPDF');

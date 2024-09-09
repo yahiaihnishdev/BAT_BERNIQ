@@ -1,19 +1,24 @@
-@extends('layout.master')
 
+
+
+@extends('layout.master')
 @section('content')
-<div class="container">
-    <h1>Add New Job</h1>
-    <form action="{{ route('jobs.store') }}" method="POST">
-        @csrf
-        <div class="form-group">
-            <label for="job_title">Job Title</label>
-            <input type="text" class="form-control" id="job_title" name="job_title" placeholder="Enter job title" required>
-        </div>
-        <div class="form-group">
-            <label for="job_active">Is Active?</label>
-            <input type="checkbox" id="job_active" name="job_active" checked>
-        </div>
-        <button type="submit" class="btn btn-primary">Add Job</button>
-    </form>
+
+<div class="page-data">
+    <div class="page-title">إضافة اسم الوظيفة</div>
+    <div class="employee-form">
+        <form action="{{ route('jobs.store') }}" method="post" class="row g-3 needs-validation" novalidate>
+            @csrf
+            <label for="name">اسم الوظيفة</label>
+            <input type="text" name="job_title" class="form-control" required>
+            <div class="invalid-feedback">
+                يرجي إدخال اسم الوظيفة
+            </div>
+            <input type="submit" value="حفظ">
+        </form>
+    </div>
 </div>
+
+<script src="{{ asset('assets/dist/js/validate.js') }}"></script>
+
 @endsection
