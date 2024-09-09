@@ -4,48 +4,48 @@
     </a>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="{{ url('admin') }}" class="nav-link link-dark" data-link="admin" aria-current="page">
+            <a href="{{ route('employees.index') }}" class="nav-link link-dark" data-link="admin" aria-current="page">
                 <i class="bi bi-house-door"></i>
-                <span>لوحة النظام</span>
+                <span>الرجوع</span>
             </a>
         </li>
 
             <li class="nav-item">
-                <a href="{{ route('user_type.index') }}" class="nav-link link-dark" data-link="user-types">
+                <a href="#" class="nav-link link-dark" data-link="user-types">
                     <i class="bi bi-people"></i>
-                    <span>أنواع المستخدمين</span>
+                    <span>أفراد العائلة</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('jobs.index') }}" class="nav-link link-dark" data-link="jobs">
+                <a href="#" class="nav-link link-dark" data-link="jobs">
                     <i class="bi bi-calendar-check"></i>
-                    <span>الوظائف</span>
+                    <span>جيهة اتصال الطوارء </span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('index_department') }}" class="nav-link link-dark" data-link="departments">
+                <a href="#" class="nav-link link-dark" data-link="departments">
                     <i class="bi bi-card-checklist"></i>
-                    <span>الأقسام</span>
+                    <span>مستنادات</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="{{ route('holidays.index') }}" class="nav-link link-dark" data-link="holidays.index">
+                <a href="#" class="nav-link link-dark" data-link="holidays.index">
                     <i class="bi bi-calendar-x"></i>
-                    <span>العطل</span>
+                    <span>العطل المقدم عليها </span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{ route('employees.index') }}" class="nav-link link-dark" data-link="employee-index">
                     <i class="bi bi-wallet2"></i>
-                    <span>الموظفين</span>
+                    <span>تقيم الاداء</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link link-dark" data-link="salary-index">
                     <i class="bi bi-wallet2"></i>
-                    <span>الرواتب</span>
+                    <span>الراتب</span>
                 </a>
             </li>
         <li class="nav-item">

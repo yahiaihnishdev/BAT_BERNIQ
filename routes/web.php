@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\CodeGeneratorController;
-
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmpFamilyController;
+use App\Http\Controllers\EmpDocumentController;
+use App\Http\Controllers\EmpContactController;
 // // Route::get('path', function(){})
 
 // Route::get('/', function () {
@@ -74,3 +76,35 @@ Route::put('/holidays/{id}', [HolidayController::class, 'update'])->name('holida
 Route::delete('/holidays/{id}', [HolidayController::class, 'delete'])->name('holidays.delete');
 Route::get('/holidays/search', [HolidayController::class, 'search'])->name('holidays.search');
 Route::get('holidays/export-pdf', [HolidayController::class, 'exportPDF'])->name('holidays.exportPDF');
+
+
+
+
+
+
+
+
+// Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
+// Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+// Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
+// Route::get('/employees/{id}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
+// Route::put('/employees/{id}', [EmployeeController::class, 'update'])->name('employees.update');
+// Route::delete('/employees/{id}', [EmployeeController::class, 'delete'])->name('employees.delete');
+
+// Employee Routes
+Route::prefix('employees')->group(function () {
+    Route::get('/', [EmployeeController::class, 'index'])->name('employees.index');
+    Route::get('/create', [EmployeeController::class, 'create'])->name('employees.create');
+    Route::post('/', [EmployeeController::class, 'store'])->name('employees.store');
+    Route::get('/{id}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
+    Route::put('/{id}', [EmployeeController::class, 'update'])->name('employees.update');
+    Route::delete('/{id}', [EmployeeController::class, 'delete'])->name('employees.delete');
+
+    // Optional: Show delete confirmation page
+    Route::get('/{id}/delete', [EmployeeController::class, 'showDelete'])->name('employees.showDelete');
+
+    // Optional: Fetch employee name via AJAX or API
+    Route::get('/{id}/name', [EmployeeController::class, 'fetchName'])->name('employees.fetchName');
+    Route::get('/employees/export', [EmployeeController::class, 'export'])->name('employees.export');
+
+});

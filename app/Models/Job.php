@@ -1,22 +1,22 @@
 <?php
-
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
-    // Define the table if it's not the plural form of the model name
-    protected $table = 'jobs';
+    use HasFactory;
 
-    // Primary key column
+    // Define the primary key column
     protected $primaryKey = 'job_id';
 
-    // Specify which fields are mass-assignable
-    protected $fillable = ['job_title', 'job_active'];
+    // Enable timestamps if needed
+    public $timestamps = true;
 
-    // Disable auto-increment if `job_id` is not auto-incremented
-    public $incrementing = false;
-
-    // Define any relationships, if necessary
+    // Add fields to the fillable array to allow mass assignment
+    protected $fillable = [
+        'job_title',         // Field for department name
+        'job_active', // Field for active status
+    ];
 }
