@@ -49,11 +49,14 @@ class HolidayController extends Controller
     {
         $holidays = Holiday::where('holiday_active', 1)->get();
 
-        // Load the view and pass the holidays data
+        // Load the view and pass the holidays data with the Arabic font configuration
         $pdf = PDF::loadView('pages.holidays.pdf', compact('holidays'));
 
+        // Set Paper Size and Orientation
+        $pdf->setPaper('a4', 'portrait'); // Use A4 size paper in portrait mode
+
         // Return the generated PDF
-        return $pdf->download('holidays.pdf');
+        return $pdf->download('holidays_report.pdf');
     }
 
     // Show the form to edit a holiday
